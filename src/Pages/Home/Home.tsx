@@ -1,5 +1,9 @@
+
 export function Home() {
+
   return (
-    <div>Teste</div>
+    <section className="flex flex-wrap gap-8 w-full">
+      Home
+    </section>
   )
 }
