@@ -16,24 +16,26 @@ import { Route as rootRoute } from './routes/__root'
 
 // Create Virtual Routes
 
-const IndexLazyImport = createFileRoute('/')()
+const AnalysisComparisonLazyImport = createFileRoute('/Analysis/Comparison')()
 
 // Create/Update Routes
 
-const IndexLazyRoute = IndexLazyImport.update({
-  path: '/',
+const AnalysisComparisonLazyRoute = AnalysisComparisonLazyImport.update({
+  path: '/Analysis/Comparison',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/index.lazy').then((d) => d.Route))
+} as any).lazy(() =>
+  import('./routes/Analysis/Comparison.lazy').then((d) => d.Route),
+)
 
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexLazyImport
+    '/Analysis/Comparison': {
+      id: '/Analysis/Comparison'
+      path: '/Analysis/Comparison'
+      fullPath: '/Analysis/Comparison'
+      preLoaderRoute: typeof AnalysisComparisonLazyImport
       parentRoute: typeof rootRoute
     }
   }
@@ -41,7 +43,7 @@ declare module '@tanstack/react-router' {
 
 // Create and export the route tree
 
-export const routeTree = rootRoute.addChildren({ IndexLazyRoute })
+export const routeTree = rootRoute.addChildren({ AnalysisComparisonLazyRoute })
 
 /* prettier-ignore-end */
 
@@ -51,11 +53,11 @@ export const routeTree = rootRoute.addChildren({ IndexLazyRoute })
     "__root__": {
       "filePath": "__root.tsx",
       "children": [
-        "/"
+        "/Analysis/Comparison"
       ]
     },
-    "/": {
-      "filePath": "index.lazy.tsx"
+    "/Analysis/Comparison": {
+      "filePath": "Analysis/Comparison.lazy.tsx"
     }
   }
 }

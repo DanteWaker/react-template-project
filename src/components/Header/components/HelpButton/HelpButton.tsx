@@ -6,10 +6,10 @@ import {
 } from '@/components/ui/tooltip'
 
 export const HelpButton = () => {
-  const toolTipMilisecondsDelay = 200
+  const toolTipMillisecondsDelay = 200
   return (
     <TooltipProvider>
-      <Tooltip delayDuration={toolTipMilisecondsDelay}>
+      <Tooltip delayDuration={toolTipMillisecondsDelay}>
         <TooltipTrigger>
           <span className="flex h-8 w-8 items-center justify-center rounded-full border-4 text-2xl font-bold text-secondary">
             ?

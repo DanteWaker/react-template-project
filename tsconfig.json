@@ -8,6 +8,19 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "strict": true, // Habilita o modo estrito
+    "noImplicitAny": true, // Não permite o uso de "any" implícito
+    "strictNullChecks": true, // Força a verificação de null e undefined
+    "strictFunctionTypes": true, // Verifica os tipos de funções de forma mais rigorosa
+    "strictBindCallApply": true, // Verifica os métodos de funções mais rigorosamente
+    "strictPropertyInitialization": true, // Garante que todas as propriedades sejam inicializadas corretamente
+    "noImplicitThis": true, // Verifica o uso de "this" não tipado
+    "alwaysStrict": true, // Garante que todos os arquivos sejam analisados em modo estrito
+    "forceConsistentCasingInFileNames": true, // Garante consistência em nomes de arquivos
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true
   }
 }
