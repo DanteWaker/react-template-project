@@ -1,4 +1,4 @@
-import { HelpButton } from './components/HelpButton/HelpButton'
+import { HelpButton } from './components/HelpButton'
 import { MenuSwitch } from './components/MenuSwitch'
 import { Profile } from './components/Profile'
 import { SideMenu } from './components/SideMenu'
@@ -25,18 +25,20 @@ export function Header({ children }: TChildComponentProps) {
           <Profile />
         </div>
       </header>
-      <section className="flex">
+      <aside className="flex">
         <menu
-          className={`relative z-10 flex h-[92vh] flex-col bg-white py-6 text-secondary-foreground shadow-md transition-all duration-200 ${isMenuOpen ? 'w-[15vw]' : 'w-0'}`}
+          data-isOpen={isMenuOpen}
+          className="relative z-10 flex h-[92vh] flex-col bg-white py-6 text-secondary-foreground shadow-md transition-all duration-200 data-[isOpen=false]:w-0 data-[isOpen=true]:w-[15vw]"
         >
           <SideMenu isMenuOpen={isMenuOpen} />
         </menu>
         <div
-          className={`transition-all duration-200 ${isMenuOpen ? 'w-[85vw]' : 'w-full'}`}
+          data-isOpen={isMenuOpen}
+          className="transition-all duration-200 data-[isOpen=false]:w-full data-[isOpen=true]:w-[85vw]"
         >
           {children}
         </div>
-      </section>
+      </aside>
     </section>
   )
 }
