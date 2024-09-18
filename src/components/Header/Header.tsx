@@ -27,7 +27,11 @@ export function Header({ children }: TChildComponentProps) {
       </header>
       <section className="flex">
         <SideMenu isMenuOpen={isMenuOpen} />
-        {children}
+        <div
+          className={`transition-all duration-200 ${isMenuOpen ? 'w-[85vw]' : 'w-full'}`}
+        >
+          {children}
+        </div>
       </section>
     </section>
   )

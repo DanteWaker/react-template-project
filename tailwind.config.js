@@ -45,7 +45,11 @@ export default {
           DEFAULT: 'hsl(var(--destructive))',
           foreground: 'hsl(var(--destructive-foreground))',
         },
-        border: '#909196',
+        veryLow: '#FF7777',
+        low: '#FFBEB8',
+        high: '#DBF2E3',
+        veryHigh: '#9be7b7',
+        border: '#F1F1F5',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
         chart: {
@@ -58,5 +62,23 @@ export default {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [
+    require('tailwindcss-animate'),
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.horizontal-tb': {
+          writingMode: 'horizontal-tb',
+        },
+        '.vertical-rl': {
+          writingMode: 'vertical-rl',
+        },
+        '.vertical-lr': {
+          writingMode: 'vertical-lr',
+          transform: 'rotate(180deg)',
+          transformOrigin: 'center',
+        },
+      }
+      addUtilities(newUtilities)
+    },
+  ],
 }

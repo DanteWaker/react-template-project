@@ -11,7 +11,7 @@ export const SideMenu = ({ isMenuOpen }: TSideMenuProps) => {
 
   return (
     <menu
-      className={`duration-250 relative z-10 flex h-[92vh] flex-col bg-white py-6 text-secondary-foreground shadow-md transition-all ${isMenuOpen ? 'w-96' : 'w-[0px]'}`}
+      className={`duration-200 relative z-10 flex h-[92vh] flex-col bg-white py-6 text-secondary-foreground shadow-md transition-all ${isMenuOpen ? 'w-[15vw]' : 'w-0'}`}
     >
       {isMenuOpen && (
         <>
