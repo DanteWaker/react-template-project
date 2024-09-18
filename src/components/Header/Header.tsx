@@ -29,13 +29,13 @@ export function Header({ children }: TChildComponentProps) {
       <aside className="flex">
         <menu
           data-isOpen={isMenuOpen}
-          className="absolute z-10 flex h-[90vh] flex-col bg-white py-6 text-secondary-foreground shadow-md transition-all duration-200 data-[isOpen=false]:w-0 data-[isOpen=true]:w-[70vw] tablet:data-[isOpen=false]:w-0 tablet:data-[isOpen=true]:w-[15vw]"
+          className="absolute z-10 flex h-[90vh] flex-col bg-white py-6 text-secondary-foreground shadow-md transition-all duration-200 data-[isOpen=false]:w-0 data-[isOpen=true]:w-[70vw] tablet:relative tablet:data-[isOpen=false]:w-0 tablet:data-[isOpen=true]:w-[20vw]"
         >
           <SideMenu isMenuOpen={isMenuOpen} />
         </menu>
         <div
           data-isOpen={isMenuOpen}
-          className="transition-all duration-200 data-[isOpen=false]:w-full data-[isOpen=true]:w-full tablet:data-[isOpen=false]:w-full tablet:data-[isOpen=true]:w-[15vw]"
+          className="transition-all duration-200 data-[isOpen=false]:w-full data-[isOpen=true]:w-full tablet:data-[isOpen=false]:w-full tablet:data-[isOpen=true]:w-[80vw]"
         >
           {children}
         </div>
