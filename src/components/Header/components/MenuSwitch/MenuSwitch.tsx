@@ -10,13 +10,16 @@ export const MenuSwitch = ({
       onClick={toggleSwitchIsMenuOpen}
     >
       <div
-        className={`duration-250 h-1 w-full rounded-full bg-secondary transition-all ${isMenuOpen && 'absolute rotate-45'}`}
+        data-isOpen={isMenuOpen}
+        className="duration-250 h-1 w-full rounded-full bg-secondary transition-all data-[isOpen=true]:absolute data-[isOpen=true]:rotate-45"
       />
       <div
-        className={`duration-250 h-1 w-full rounded-full bg-secondary transition-all ${isMenuOpen && 'hidden'}`}
+        data-isOpen={isMenuOpen}
+        className="duration-250 h-1 w-full rounded-full bg-secondary transition-all data-[isOpen=true]:hidden"
       />
       <div
-        className={`duration-250 h-1 w-full rounded-full bg-secondary transition-all ${isMenuOpen && 'absolute -rotate-45'}`}
+        data-isOpen={isMenuOpen}
+        className="duration-250 h-1 w-full rounded-full bg-secondary transition-all data-[isOpen=true]:absolute data-[isOpen=true]:-rotate-45"
       />
     </button>
   )

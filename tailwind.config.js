@@ -3,6 +3,9 @@ export default {
   darkMode: ['class'],
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    fontFamily: {
+      sans: ['"Open Sans"'],
+    },
     screens: {
       tablet: '640px',
       laptop: '1024px',
