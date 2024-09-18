@@ -1,3 +1,4 @@
+import { BUSINESS_NAME } from '@/config'
 import { HelpButton } from './components/HelpButton'
 import { MenuSwitch } from './components/MenuSwitch'
 import { Profile } from './components/Profile'
@@ -17,7 +18,7 @@ export function Header({ children }: TChildComponentProps) {
             isMenuOpen={isMenuOpen}
           />
           <h1 className="mx-5 text-center text-3xl font-semibold text-primary">
-            ãcme
+            {BUSINESS_NAME}
           </h1>
         </div>
         <div className="flex items-center justify-center gap-2">
