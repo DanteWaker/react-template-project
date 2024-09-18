@@ -21,7 +21,7 @@ export function Header({ children }: TChildComponentProps) {
             {BUSINESS_NAME}
           </h1>
         </div>
-        <div className="flex items-center justify-center gap-2">
+        <div className="flex items-center justify-center gap-4">
           <HelpButton tooltipText="Por favor, busque ajuda no e-mail" />
           <Profile />
         </div>

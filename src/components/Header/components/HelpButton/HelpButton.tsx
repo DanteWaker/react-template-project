@@ -14,7 +14,7 @@ export const HelpButton = ({
     <TooltipProvider>
       <Tooltip delayDuration={toolTipMillisecondsDelay}>
         <TooltipTrigger>
-          <span className="flex h-8 w-8 items-center justify-center rounded-full border-[3px] border-secondary text-2xl font-bold text-secondary">
+          <span className="flex h-6 w-6 items-center justify-center rounded-full border-[2px] border-secondary text-xl font-semibold text-secondary">
             ?
           </span>
         </TooltipTrigger>
