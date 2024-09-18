@@ -2,7 +2,6 @@ import { useData } from '@/hooks/Data'
 
 export function Comparison() {
   const { mockData, headers } = useData()
-  const benckmarkData = mockData.benchmark
   const transformedData = {
     benchmark: Object.entries(mockData.benchmark),
     teams: mockData.teams.map((team) => ({
@@ -29,7 +28,7 @@ export function Comparison() {
           </tr>
           <tr className="flex w-full items-start justify-start gap-1">
             <td className="flex w-72 items-end justify-start border-2 bg-border p-4 text-start font-semibold">
-              Benchmarck (all industries)
+              Benchmark (all industries)
             </td>
             {benchmarkData.map((item) => (
               <td className="flex-1 border-2 bg-border p-4 text-start text-secondary">

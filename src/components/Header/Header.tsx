@@ -21,12 +21,16 @@ export function Header({ children }: TChildComponentProps) {
           </h1>
         </div>
         <div className="flex items-center justify-center gap-2">
-          <HelpButton />
+          <HelpButton tooltipText="Por favor, busque ajuda no e-mail" />
           <Profile />
         </div>
       </header>
       <section className="flex">
-        <SideMenu isMenuOpen={isMenuOpen} />
+        <menu
+          className={`relative z-10 flex h-[92vh] flex-col bg-white py-6 text-secondary-foreground shadow-md transition-all duration-200 ${isMenuOpen ? 'w-[15vw]' : 'w-0'}`}
+        >
+          <SideMenu isMenuOpen={isMenuOpen} />
+        </menu>
         <div
           className={`transition-all duration-200 ${isMenuOpen ? 'w-[85vw]' : 'w-full'}`}
         >

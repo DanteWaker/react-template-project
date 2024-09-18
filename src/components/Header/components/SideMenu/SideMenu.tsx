@@ -10,40 +10,36 @@ export const SideMenu = ({ isMenuOpen }: TSideMenuProps) => {
   const { checkIsActive } = useSideMenu()
 
   return (
-    <menu
-      className={`duration-200 relative z-10 flex h-[92vh] flex-col bg-white py-6 text-secondary-foreground shadow-md transition-all ${isMenuOpen ? 'w-[15vw]' : 'w-0'}`}
-    >
-      {isMenuOpen && (
-        <>
-          {menuItems.map((menuItem) => (
-            <>
-              {menuItem.subMenu.length > 0 ? (
-                <div className="flex flex-col">
-                  <div className={menuClasses}>
-                    {menuItem.icon}
-                    {menuItem.title}
-                  </div>
-                  <div className="flex flex-col">
-                    {menuItem.subMenu.map((submenu) => (
-                      <Link
-                        to={submenu.path}
-                        className={`gap-4 py-2 pl-24 text-lg ${checkIsActive(submenu.path) && 'border-l-8 border-primary font-semibold text-black'}`}
-                      >
-                        {submenu.title}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              ) : (
-                <Link to={menuItem.path} className={menuClasses}>
+    isMenuOpen && (
+      <>
+        {menuItems.map((menuItem) => (
+          <>
+            {menuItem.subMenu.length > 0 ? (
+              <div className="flex flex-col">
+                <div className={menuClasses}>
                   {menuItem.icon}
                   {menuItem.title}
-                </Link>
-              )}
-            </>
-          ))}
-        </>
-      )}
-    </menu>
+                </div>
+                <div className="flex flex-col">
+                  {menuItem.subMenu.map((submenu) => (
+                    <Link
+                      to={submenu.path}
+                      className={`gap-4 py-2 pl-24 text-lg ${checkIsActive(submenu.path) && 'border-l-8 border-primary font-semibold text-black'}`}
+                    >
+                      {submenu.title}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <Link to={menuItem.path} className={menuClasses}>
+                {menuItem.icon}
+                {menuItem.title}
+              </Link>
+            )}
+          </>
+        ))}
+      </>
+    )
   )
 }
