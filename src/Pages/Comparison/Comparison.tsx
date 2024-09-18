@@ -12,6 +12,8 @@ export function Comparison() {
 
   const benchmarkData = transformedData.benchmark
 
+  console.log(benchmarkData)
+
   return (
     <section className="w-full p-12">
       <div className="mb-8 flex items-center justify-between">

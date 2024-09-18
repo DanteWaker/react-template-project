@@ -9,6 +9,11 @@
     "paths": {
       "@/*": ["./src/*"]
     },
+    "target": "ES6",
+    "module": "CommonJS",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "outDir": "./dist",
     "strict": true, // Habilita o modo estrito
     "noImplicitAny": true, // Não permite o uso de "any" implícito
     "strictNullChecks": true, // Força a verificação de null e undefined
