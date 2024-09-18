@@ -1,5 +1,5 @@
 import { useData } from '@/hooks/Data'
-
+import { PiDownloadFill } from 'react-icons/pi'
 export function Comparison() {
   const { mockData, headers } = useData()
   const transformedData = {
@@ -14,8 +14,19 @@ export function Comparison() {
 
   return (
     <section className="w-full p-12">
-      <div className="flex w-full flex-col flex-wrap gap-8 bg-white p-8 shadow-sm">
-        <table className="flex w-full border-separate flex-col gap-1">
+      <div className="mb-8 flex items-center justify-between">
+        <h1 className="text-2xl font-bold text-black">Comparison</h1>
+        <button
+          onClick={() => console.log('export')}
+          className="flex items-center justify-center gap-2 rounded-sm border-2 bg-white px-4 py-2 font-semibold text-secondary-foreground"
+        >
+          <PiDownloadFill />
+          Export
+        </button>
+      </div>
+      <div className="flex w-full flex-col flex-wrap gap-8 bg-white shadow-sm">
+        <div className="h-16 w-full border-b-[1px] bg-white" />
+        <table className="flex w-full border-separate flex-col gap-1 p-8">
           <tr className="flex h-80 w-full items-start justify-start gap-1">
             <th className="flex h-full w-72 items-end justify-start border-2 p-4 text-start">
               Teams

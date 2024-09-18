@@ -55,6 +55,7 @@ export default {
         border: '#F1F1F5',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
+        black: '#1C1E2A',
         chart: {
           1: 'hsl(var(--chart-1))',
           2: 'hsl(var(--chart-2))',
