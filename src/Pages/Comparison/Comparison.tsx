@@ -1,21 +1,9 @@
-import { PiDownloadFill } from 'react-icons/pi'
-import { useComparison } from './hooks'
+import { TitleBar } from './components/TitleBar'
 
 export function Comparison() {
-  const { data } = useComparison()
-
   return (
     <section className="w-full p-12">
-      <div className="mb-8 flex items-center justify-between">
-        <h1 className="text-2xl font-bold text-black">Comparison</h1>
-        <button
-          onClick={() => console.log('export')}
-          className="flex items-center justify-center gap-2 rounded-sm border-2 bg-white px-4 py-2 font-semibold text-secondary-foreground"
-        >
-          <PiDownloadFill />
-          Export
-        </button>
-      </div>
+      <TitleBar title="Comparison" buttonType="export" />
       <div className="flex w-full flex-col flex-wrap gap-8 bg-white shadow-sm">
         <div className="h-16 w-full border-b-[1px] bg-white" />
         {/* <table className="flex w-full border-separate flex-col gap-1 p-8">
