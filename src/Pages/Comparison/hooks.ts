@@ -1,6 +1,7 @@
 import { getData } from '@/services/dataService/dataService'
 import { IData } from '@/types/data.types'
 import { useQuery } from '@tanstack/react-query'
+import { TableHeaderTitle } from './constants'
 
 function useComparisonData() {
   const query = useQuery<IData>({
@@ -16,5 +17,5 @@ export function useComparison() {
 
   console.log(data)
 
-  return { data }
+  return { data, TableHeaderTitle }
 }

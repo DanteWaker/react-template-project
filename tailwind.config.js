@@ -48,6 +48,7 @@ export default {
           DEFAULT: 'hsl(var(--destructive))',
           foreground: 'hsl(var(--destructive-foreground))',
         },
+        icon: '#BFC7D0',
         veryLow: '#FF7777',
         low: '#FFBEB8',
         high: '#DBF2E3',
