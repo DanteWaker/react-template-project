@@ -2,20 +2,26 @@ import { getData } from '@/services/dataService/dataService'
 import { IData } from '@/types/data.types'
 import { useQuery } from '@tanstack/react-query'
 import { TableHeaderTitle } from './constants'
+import { TMainRow } from '@/components/Table/Table.types'
 
 function useComparisonData() {
   const query = useQuery<IData>({
     queryKey: ['data'],
     queryFn: getData,
   })
+  const data = query.data
+  const isLoading = query.isLoading
 
-  return { data: query.data }
+  return { data, isLoading }
 }
 
 export function useComparison() {
-  const { data } = useComparisonData()
+  const { data, isLoading } = useComparisonData()
 
-  console.log(data)
+  const mainRow: TMainRow = {
+    rowTitle: 'Benchmark (all industries)',
+    rowContent: { ...data?.benchmark },
+  }
 
-  return { data, TableHeaderTitle }
+  return { data, isLoading, TableHeaderTitle, mainRow }
 }
